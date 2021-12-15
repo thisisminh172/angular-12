@@ -1,9 +1,13 @@
 <div class="test">
     <h3>đây là component home</h3>
     <h2>Chao ban {{name}}</h2>
-    <input type="text" value="{{ name }}">
+    <input type="text" [(ngModel)]="age">
     <br>
-    <h2 *ngIf="age > 18 && age < 90">Ban qua gia roi!</h2>
-    <h2 *ngIf="age <= 18">Ban con tre qua!</h2>
+    <!-- <h2 *ngIf="age > 18 && age < 90">Ban qua gia roi!</h2>
+    <h2 *ngIf="age <= 18">Ban con tre qua!</h2> -->
+
+    <div *ngIf = "age <= 18; then tre else gia"></div>
+    <ng-template #gia>Ban qua gia roi!</ng-template>
+    <ng-template #tre>Ban con tre qua!</ng-template>
 </div>
 
