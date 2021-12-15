@@ -1,7 +1,25 @@
 <div class="test">
-    <h3>Fruits</h3>
-    <div *ngFor = "let trai of fruits; let i = index">
-        <li>{{ i+1 }}. {{ trai }}</li>
-    </div>
+  <h3>Fruits</h3>
+  <div *ngFor="let trai of fruits; let i = index">
+    <li>{{ i + 1 }}. {{ trai }}</li>
+  </div>
+  <br />
+  <table class="table">
+    <tr>
+      <th>thu tu</th>
+      <th>Ten</th>
+      <th>Gia</th>
+      <th>Dai Ha Gia</th>
+    </tr>
+    <tr *ngFor="let trai of fruits2; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ trai.ten }}</td>
+      <td class="right">
+        <span [ngClass]="{ 'so-am': trai.gia < 0 }">${{ trai.gia }}</span>
+      </td>
+      <td>
+        <span *ngIf = "trai.haGia">Dang ha gia</span>
+      </td>
+    </tr>
+  </table>
 </div>
-
