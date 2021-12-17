@@ -1,0 +1,12 @@
+<p>form works!</p>
+<form (ngSubmit)="submitForm()">
+  name:
+  <input
+    type="text"
+    [(ngModel)]="name"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <br />
+  <!-- <button type="submit" (click)="submitForm()">Submit</button> -->
+  <button>Submit2</button>
+</form>
