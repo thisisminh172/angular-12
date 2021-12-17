@@ -1,0 +1,2 @@
+npx json-server --watch db.json
+npx json-server --watch db.json --port 5000 --routes routes.json
