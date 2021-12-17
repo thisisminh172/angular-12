@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonService } from '../Services/common.service';
 
 @Component({
   selector: 'app-home',
@@ -64,7 +65,7 @@ export class HomeComponent implements OnInit {
     },
   ];
   public districts: string[] = [];
-  constructor() {}
+  constructor(private common: CommonService) {}
   public changeCity(event: any): void {
     
     const city = event.target.value;
@@ -80,7 +81,12 @@ export class HomeComponent implements OnInit {
     // Cachg 2
     this.districts = this.vietnamData.find(data => data.name === city)?.district || [];
   }
+  public counter = 0;
+  public counterBinhPhuong = 0;
   public ngOnInit(): void {
     console.log('Cities = ', this.vietnamData);
+    this.counter = this.common.counter;
+    this.counterBinhPhuong = this.common.binhPhuong(this.counter);
+    
   }
 }

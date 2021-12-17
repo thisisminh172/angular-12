@@ -25,13 +25,22 @@
     </tr>
   </table>
   <select id="city" (change)="changeCity($event)">
-    <option *ngFor="let data of vietnamData; let i = index" value="{{data.name}}">
-      {{data.name}}
+    <option
+      *ngFor="let data of vietnamData; let i = index"
+      value="{{ data.name }}"
+    >
+      {{ data.name }}
     </option>
   </select>
   <select id="district">
-    <option *ngFor="let district of districts; let i = index" value="{{district}}">
-      {{district}}
+    <option
+      *ngFor="let district of districts; let i = index"
+      value="{{ district }}"
+    >
+      {{ district }}
     </option>
   </select>
 </div>
+<span>Counter = {{ counter }}</span>
+<br />
+<span>Counter ^ 2 = {{ counterBinhPhuong }}</span>
